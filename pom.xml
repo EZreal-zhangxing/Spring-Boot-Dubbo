@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.zx.dubbo</groupId>
+  <artifactId>dubbo-root</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
+
+  <modules>
+    <module>dubbo-consumer</module>
+    <module>dubbo-api</module>
+    <module>dubbo-zx-provider</module>
+  </modules>
+
+  <properties>
+    <dubbo-spring-boot>1.0.0</dubbo-spring-boot>
+      <java.version>1.8</java.version>
+  </properties>
+
+    <!-- Spring Boot 启动父依赖 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.5.RELEASE</version>
+    </parent>
+
+  <dependencies>
+
+        <!-- Spring Boot Dubbo 依赖 -->
+<!--        <dependency>-->
+<!--          <groupId>io.dubbo.springboot</groupId>-->
+<!--          <artifactId>spring-boot-starter-dubbo</artifactId>-->
+<!--          <version>${dubbo-spring-boot}</version>-->
+<!--        </dependency>-->
+
+      <!-- 引入spring-boot-starter以及dubbo和curator的依赖 -->
+      <dependency>
+          <groupId>com.alibaba.boot</groupId>
+          <artifactId>dubbo-spring-boot-starter</artifactId>
+          <version>0.2.0</version>
+      </dependency>
+
+        <!-- Spring Boot Web 依赖 -->
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Spring Boot Test 依赖 -->
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-test</artifactId>
+          <scope>test</scope>
+        </dependency>
+
+        <!-- Junit -->
+        <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.12</version>
+        </dependency>
+
+        <!-- 元数据 -->
+      <dependency>
+        <groupId>org.apache.dubbo</groupId>
+        <artifactId>dubbo-metadata-report-zookeeper</artifactId>
+      </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
